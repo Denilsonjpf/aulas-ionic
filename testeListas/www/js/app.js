@@ -24,16 +24,14 @@ angular.module('starter', ['ionic'])
     }
   });
 })
-.controller("MeuController", function($scope){
-
-  $scope.itens = ["UVA", "MORANGO", "BANANA", "PERA"];
-  
-  // definir uma função anonima para moveItem que irá alterar a posição dos itens
-  $scope.moveItem = function(item, fromIndex, toIndex){
-    //splice nos ajuda a capturar a posição incial do item
-    $scope.itens.splice(fromIndex, 1); 
-    //vamos definir a nova posição do item na lista
-    $scope.itens.splice(toIndex, 0, item);
-  };
-
+.controller("ListController", function($scope){
+  $scope.itens = ["Matemática", "Língua Portuguesa", "Redação", "Literatura", "Física", 
+  "Química", "Geografia", "Filosofia", "Sociologia", "Biologia", "Atualidades", "Inglês"]
+  //define uma função para mover os itens
+  $scope.moveItem = function(item, posicaoInicial, novaPosicao){
+    //splice captura a posição inicial do item
+    $scope.itens.splice(posicaoInicial, 1)
+    //define a nova posição do item
+    $scope.itens.splice(novaPosicao, 0, item)
+  }
 })

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title>Trabalhando com Lista no IONIC</title>
+    <title>Atividade Listas</title>
 
     <link rel="manifest" href="manifest.json">
 
@@ -36,32 +36,16 @@
 
     <ion-pane>
       <ion-header-bar class="bar-calm">
-        <h1 class="title">Ionic - Trabalhando com Lista</h1>
+        <h1 class="ion light">Lista de matérias para estudar para o Vestibular</h1>
       </ion-header-bar>
       <ion-content>
-        <ul class="list">
-          <li class="item"> Item 1 da Lista </li>
-          <li class="item item-icon-left">
-            <i class="icon ion-email">Olhar e-mail</i>
-          </li>
-          <li class="item item-icon-right">
-            <i class="icon ion-person-stalker"></i>
-            <h1>Usuário: João</h1>
-            <i class="badge badge-assertive">12</i>
-          </li>
-        </ul>
-
-        <ion-list ng-controller="MeuController" show-reorder="true">
-          <div class="item item-divider">
-            Diretivas - Reordenar Itens da Lista
-          </div>  
+        <ion-list ng-controller="ListController" show-reorder="true">
           <ion-item ng-repeat="item in itens">
-             {{ item }}
-             <ion-reorder-button class="ion-navicon" on-reorder="moveItem(item, $fromIndex, $toIndex)">
-             </ion-reorder-button>
-          </ion-item>        
+            {{ item }}
+            <ion-reorder-button class="ion-navicon" on-reorder="moveItem(item,$fromIndex, $toIndex)">
+            </ion-reorder-button>
+          </ion-item>
         </ion-list>
-        
       </ion-content>
     </ion-pane>
   </body>
