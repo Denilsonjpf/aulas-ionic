@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title></title>
+
+  <link rel="manifest" href="manifest.json">
+
+  <!-- un-comment this code to enable service worker
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log('service worker installed'))
+          .catch(err => console.log('Error', err));
+      }
+    </script>-->
+
+  <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+
+  <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+  <!-- ionic/angularjs js -->
+  <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+  <!-- cordova script (this will be a 404 during development) -->
+  <script src="cordova.js"></script>
+
+  <!-- your app's js -->
+  <script src="js/app.js"></script>
+</head>
+
+<body ng-app="starter">
+
+  <ion-pane>
+    <ion-header-bar class="bar-calm">
+      <h1 class="title">Componentes Checkbox, Radio Button e Range</h1>
+    </ion-header-bar>
+    <ion-content>
+      <h3>Linguagem de programação preferida</h3>
+      <ion-list>
+        <ion-checkbox ng-model="linguagem.PHP">PHP</ion-checkbox>
+        <ion-checkbox ng-model="linguagem.JAVA">JAVA</ion-checkbox>
+        <ion-checkbox ng-model="linguagem.C">C</ion-checkbox>
+        <ion-checkbox ng-model="linguagem.JavaScript">JavaScript</ion-checkbox>
+        <ion-item>{{linguagem}}</ion-item>
+      </ion-list>
+
+      <ion-list>
+        <ion-item>Selecione uma opção:</ion-item>
+        <ion-radio ng-model="sexo" ng-value="'Masculino'">Masculino</ion-radio>
+        <ion-radio ng-model="sexo" ng-value="'Feminino'">Feminino</ion-radio>
+        <ion-item>Opção selecionada: {{sexo}}</ion-item>
+      </ion-list>
+
+
+      <div class="list">
+        <div class="item range">
+          <i class="icon ion-volume-low"></i>
+          <input type="range" min="0" max="100" ng-value="50" ng-model="volume">
+          <i class="icon ion-volume-high"></i>
+        </div>
+        <div class="item">{{volume}}</div>
+      </div>
+
+    </ion-content>
+  </ion-pane>
+</body>
+
+</html>
